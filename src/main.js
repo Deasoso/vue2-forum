@@ -12,6 +12,11 @@ import MuseUI from 'muse-ui'
 import 'muse-ui/dist/muse-ui.css'
 Vue.use(MuseUI)
 
+// buefy
+import Buefy from 'buefy'
+import 'buefy/dist/buefy.css'
+Vue.use(Buefy)
+
 // common.css、base.css、animate.css
 import './assets/css/common.css' 
 import './assets/css/base.css' 
