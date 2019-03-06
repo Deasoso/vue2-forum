@@ -9,7 +9,7 @@
     <router-view class="main fe ovh" />
     <!-- 提示弹窗 -->
     <infoPopup v-show="common.infopopup.isopen" />
-    <bottomNav />
+    <!-- <bottomNav /> -->
   </div>
 </template>
 

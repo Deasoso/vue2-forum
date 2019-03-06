@@ -11,7 +11,7 @@
         </a>
         <a class="navbar-item" style="margin-left:auto;margin-right:0px">
           <span class="icon">
-            <i class="fas fa-home"></i>
+            <i class="fas fa-user"></i>
           </span>
         </a>
         <a role="button" class="navbar-burger burger" style="margin-left:0px" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample" ref="nav" @click="clicknav">
@@ -20,38 +20,29 @@
           <span aria-hidden="true"></span>
         </a>
       </div>
-      <div id="navbarBasicExample" class="navbar-menu" ref="navitem" style="position: absolute;opacity: 0.9;right: 0px">
+      <div id="navbarBasicExample" class="navbar-menu navbaritems" ref="navitem">
         <div class="navbar-start">
-
           <a class="navbar-item">
-            Home
+            首页
           </a>
-
           <a class="navbar-item">
-            Documentation
+            个人信息
           </a>
-
-          <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link">
-              More
-            </a>
-
-            <div class="navbar-dropdown is-right">
-              <a class="navbar-item">
-                About
-              </a>
-              <a class="navbar-item">
-                Jobs
-              </a>
-              <a class="navbar-item">
-                Contact
-              </a>
-              <hr class="navbar-divider">
-              <a class="navbar-item">
-                Report an issue
-              </a>
-            </div>
-          </div>
+          <a class="navbar-item">
+            我的团队
+          </a>
+          <a class="navbar-item">
+            我的帖子
+          </a>
+          <a class="navbar-item">
+            制作软件
+          </a>
+          <a class="navbar-item">
+            我的消息
+          </a>
+          <a class="navbar-item">
+            关于我们
+          </a>
         </div>
       </div>
     </nav>
@@ -105,6 +96,11 @@ export default {
         height: 30px;
       }
     }
+  }
+  .navbaritems{
+    position: absolute;
+    opacity: 0.9;
+    right: 0px
   }
 
 </style>

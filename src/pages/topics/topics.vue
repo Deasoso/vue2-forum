@@ -1,6 +1,6 @@
 <template>
   <div class="topics grail">
-    <mu-tabs 
+    <!-- <mu-tabs 
       :value="activeTab" 
       lineClass="tabs-line"
       @change="handleTabChange"
@@ -11,7 +11,7 @@
       <mu-tab value="share" title="分享"/>
       <mu-tab value="ask" title="问答"/>
       <mu-tab value="job" title="招聘"/>
-    </mu-tabs>
+    </mu-tabs> -->
     <!-- 只在第一次加载tab话题数据时显示，之后用正在加载显示加载状态 -->
     <mu-circular-progress
       class="pfi centre1" 
@@ -27,42 +27,8 @@
       :key="i"  
     >
       <!-- 这个组件必须放在scroller里面 -->
-      <section>
-        <slider class="sliderContainer" animation="normal" height="700px">
-          <slider-item>
-            <div class="slide slide1">
-              <div class="slideContainer">
-                <span class="slidetext slidetitle">各路武将 谁与争锋</span>
-                <p class="slidetext">在幸运币商店购买幸运币即可抽取随机一位武将。</p>
-                <br>
-                <div class="btndiv">
-                  <router-link class="button is-medium gotoDetail" :to="{ name: 'PreSale' }">了解详情</router-link>
-                </div>
-              </div>
-            </div>
-          </slider-item>
-          <slider-item>
-            <div class="slide slide2">
-              <div class="slideContainer">
-                <span class="slidetext slidetitle">群雄争霸天下</span>
-                <p class="slidetext">指挥武将进行对战，争夺城池，一统天下。</p>
-                <br>
-                <div class="btndiv">
-                  <router-link class="button is-medium gotoDetail" :to="{ name: 'Game' }">了解详情</router-link>
-                </div>
-              </div>
-            </div>
-          </slider-item>
-          <slider-item>
-            <div class="slide slide3">
-              <div class="slideContainer">
-                <span class="slidetext slidetitle">更多内容</span>
-                <p class="slidetext">敬请期待。</p>
-              </div>
-            </div>
-          </slider-item>
-        </slider>
-      </section>
+      <slidePage />
+      <toolList :tools="tools"/>
       <mu-refresh-control 
         @refresh="refreshTabTopic"      
         :refreshing="refreshingObj[tabItem]" 
@@ -83,18 +49,20 @@
 </template>
 
 <script>
-import { Slider, SliderItem } from 'vue-easy-slider';
 import { mapState } from 'vuex'
+import slidePage from '../../components/slidePage'
+import toolList from '../../components/toolList'
 import topicItem from '../../components/topicItem'
 import noMoreData from '../../components/noMoreData'
+import tools from '../../assets/json/toollist.json'
 
 export default {
   name: 'topics',
   components: {
     topicItem,
     noMoreData,
-    Slider,
-    SliderItem
+    slidePage,
+    toolList,
   },
   data(){
     return {
@@ -114,7 +82,8 @@ export default {
         share: null,
         ask: null,
         job: null
-      }  //每个tab的滚动条是独立的
+      },  //每个tab的滚动条是独立的
+      tools: tools,
     }
   },
   computed: {
@@ -196,58 +165,4 @@ export default {
       }
     }
   }
-
-//slide
-.sliderContainer {
-  width: 100%;
-  height: 100%;
-}
-.slide {
-  width: 100%;
-  height: 100%;
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-color: #000;
-  display: inline-block;
-  vertical-align: middle;
-  padding-left: 30px;
-}
-.slide1 {
-  background-image: url("../../assets/img/home1.jpeg");
-    background-size: cover;
-}
-.slide2 {
-  background-image: url("../../assets/img/home2.jpeg");
-    background-size: cover;
-}
-.slide3 {
-  background-image: url("../../assets/img/home3.jpeg");
-    background-size: cover;
-}
-.slideContainer {
-  margin-top: 55px;
-  margin-left: 30px;
-  padding: 30px;
-  width: 80%;
-  height: 50%;
-  background-color: #ffffff33;
-  /*opacity: 0.5;*/
-}
-.slidetext {
-  color: #000;
-  font-size: 20px;
-}
-.slidetitle {
-  font-size: 40px;
-}
-.gotoDetail {
-  background-image: url("../../assets/img/home_button.png");
-  background-size: cover;
-  height: 50px;
-  width: 130px;
-  background-color: transparent;
-  border-color: transparent;
-  color: #3a2729;
-}
-
 </style>
