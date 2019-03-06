@@ -6,8 +6,8 @@
   <div>
     <nav class="navbar" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
-        <a class="navbar-item" href="https://bulma.io">
-          <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
+        <a class="navbar-item square" href="/">
+          广场
         </a>
         <a class="navbar-item" style="margin-left:auto;margin-right:0px">
           <span class="icon">
@@ -22,12 +22,12 @@
       </div>
       <div id="navbarBasicExample" class="navbar-menu navbaritems" ref="navitem">
         <div class="navbar-start">
-          <a class="navbar-item">
+          <router-link class="navbar-item" to="/topics/话题">
             首页
-          </a>
-          <a class="navbar-item">
+          </router-link>
+          <router-link class="navbar-item" to="/user/我的">
             个人信息
-          </a>
+          </router-link>
           <a class="navbar-item">
             我的团队
           </a>
@@ -37,9 +37,14 @@
           <a class="navbar-item">
             制作软件
           </a>
-          <a class="navbar-item">
+          <router-link class="navbar-item" to="/message/未读消息">
             我的消息
-          </a>
+            <transition enter-active-class="animated fadeIn" leave-active-class="animated fadeOut">
+              <span class="message-num db pab tc" v-if="login.loginstate && HAS_NOT_READ_MESSAGES_COUNT">
+                {{ HAS_NOT_READ_MESSAGES_COUNT }}
+              </span>
+            </transition>
+          </router-link>
           <a class="navbar-item">
             关于我们
           </a>
@@ -102,5 +107,9 @@ export default {
     opacity: 0.9;
     right: 0px
   }
-
+  .square{
+    padding-left: 20px;
+    font-size:20px;
+    font-weight:bold;
+  }
 </style>

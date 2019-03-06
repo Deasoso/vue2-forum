@@ -1,35 +1,15 @@
 <template>
   <section>
     <slider class="sliderContainer" animation="normal" auto="false" height="180px">
-      <slider-item>
-        <div class="slide slide1">
+      <slider-item v-for="(slide, index) in slides" :key="index">
+        <div class="slide" v-bind:style="{backgroundImage:'url(' + slide.url + ')'}">
           <div class="slideContainer">
-            <span class="slidetext slidetitle">各路武将 谁与争锋</span>
-            <p class="slidetext">在幸运币商店购买幸运币即可抽取随机一位武将。</p>
+            <span class="slidetext slidetitle">{{slide.title}}</span>
+            <p class="slidetext">{{slide.subtitle}}</p>
             <br>
           </div>
           <div class="btndiv">
-            <router-link class="button is-medium gotoDetail" :to="{ name: 'PreSale' }"><div class="btnfont">了解详情</div></router-link>
-          </div>
-        </div>
-      </slider-item>
-      <slider-item>
-        <div class="slide slide2">
-          <div class="slideContainer">
-            <span class="slidetext slidetitle">群雄争霸天下</span>
-            <p class="slidetext">指挥武将进行对战，争夺城池，一统天下。</p>
-            <br>
-          </div>
-          <div class="btndiv">
-            <router-link class="button is-medium gotoDetail" :to="{ name: 'Game' }"><div class="btnfont">了解详情</div></router-link>
-          </div>
-        </div>
-      </slider-item>
-      <slider-item>
-        <div class="slide slide3">
-          <div class="slideContainer">
-            <span class="slidetext slidetitle">更多内容</span>
-            <p class="slidetext">敬请期待。</p>
+            <router-link class="button is-medium gotoDetail is-info" :to="slide.to"><div class="btnfont">了解详情</div></router-link>
           </div>
         </div>
       </slider-item>
@@ -46,8 +26,9 @@ export default {
     SliderItem,
   },
   props: {
-    data: {
-
+    slides: {
+        Type: Array,
+        defalut: () => [],
     }
   },
 }
@@ -69,18 +50,7 @@ export default {
     display: inline-block;
     vertical-align: middle;
     padding-left: 15px;
-  }
-  .slide1 {
-    background-image: url("../assets/img/home1.jpeg");
-      background-size: cover;
-  }
-  .slide2 {
-    background-image: url("../assets/img/home2.jpeg");
-      background-size: cover;
-  }
-  .slide3 {
-    background-image: url("../assets/img/home3.jpeg");
-      background-size: cover;
+    background-size: cover;
   }
   .slideContainer {
     margin-top: 28px;
@@ -88,7 +58,7 @@ export default {
     padding: 15px;
     width: 80%;
     height: 50%;
-    background-color: #ffffff33;
+    background-color: #ffffffab;
     /*opacity: 0.5;*/
   }
   .slidetext {
@@ -99,7 +69,7 @@ export default {
     font-size: 20px;
   }
   .gotoDetail {
-    background-image: url("../assets/img/home_button.png");
+    // background-image: url("../assets/img/home_button.png");
     background-size: cover;
     height: 25px;
     width: 65px;

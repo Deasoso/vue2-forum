@@ -1,43 +1,37 @@
 [
     {
-        "url":"../../assets/img/iconcoin.png",
+        "url":"http://www.deaso40.com/emag/oldimg/RMXP.jpg",
         "name":"RMXP",
         "to":"/m/"
     }
     ,
     {
-        "url":"../../assets/img/iconcoin.png",
-        "name":"RMXP",
+        "url":"http://www.deaso40.com/emag/oldimg/RMVX.jpg",
+        "name":"RMVX",
         "to":"/m/"
     }
     ,
     {
-        "url":"../../assets/img/iconcoin.png",
-        "name":"RMXP",
+        "url":"http://www.deaso40.com/emag/oldimg/RMMV.jpg",
+        "name":"RMMV",
         "to":"/m/"
     }
     ,
     {
-        "url":"../../assets/img/iconcoin.png",
-        "name":"RMXP",
+        "url":"http://www.deaso40.com/emag/oldimg/3dx max.jpg",
+        "name":"3ds",
         "to":"/m/"
     }
     ,
     {
-        "url":"../../assets/img/iconcoin.png",
-        "name":"RMXP",
+        "url":"http://www.deaso40.com/emag/oldimg/AGM.jpg",
+        "name":"AGM",
         "to":"/m/"
     }
     ,
     {
-        "url":"../../assets/img/iconcoin.png",
-        "name":"RMXP",
-        "to":"/m/"
-    }
-    ,
-    {
-        "url":"../../assets/img/iconcoin.png",
-        "name":"RMXP",
+        "url":"http://www.deaso40.com/emag/oldimg/橙光.jpg",
+        "name":"橙光",
         "to":"/m/"
     }
 ]

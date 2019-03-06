@@ -3,9 +3,9 @@
     <table>
       <tr v-for="(item, index) in tools" :key="index" v-if="index % 4 == 0">
         <td v-for="(tool, index1) in tools.slice(index, index+4)" :key="index1">
-          <router-link class="nav-box" :to="'/m/'">
-            <img width="38px" src="../assets/img/iconcoin.png" alt="">
-            <div>1</div>
+          <router-link class="nav-box" :to="item.to">
+            <img width="38px" :src="tool.url" alt="">
+            <div>{{tool.name}}</div>
           </router-link>
         </td>
       </tr>

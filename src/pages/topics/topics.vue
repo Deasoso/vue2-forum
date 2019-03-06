@@ -27,7 +27,7 @@
       :key="i"  
     >
       <!-- 这个组件必须放在scroller里面 -->
-      <slidePage />
+      <slidePage :slides="slides"/>
       <toolList :tools="tools"/>
       <mu-refresh-control 
         @refresh="refreshTabTopic"      
@@ -55,6 +55,7 @@ import toolList from '../../components/toolList'
 import topicItem from '../../components/topicItem'
 import noMoreData from '../../components/noMoreData'
 import tools from '../../assets/json/toollist.json'
+import slides from '../../assets/json/slidelist.json'
 
 export default {
   name: 'topics',
@@ -84,6 +85,7 @@ export default {
         job: null
       },  //每个tab的滚动条是独立的
       tools: tools,
+      slides: slides,
     }
   },
   computed: {
