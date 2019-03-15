@@ -12,6 +12,8 @@
         <a class="navbar-item" style="margin-left:auto;margin-right:0px">
           <span class="icon">
             <i class="fas fa-user"></i>
+              <router-link class="navbar-item" to="/user/我的">
+              </router-link>
           </span>
         </a>
         <a role="button" class="navbar-burger burger" style="margin-left:0px" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample" ref="nav" @click="clicknav">
@@ -84,7 +86,7 @@ export default {
       }
     },
     clicknav(){
-      console.log(this.$refs.nav.classList);
+      // console.log(this.$refs.nav.classList);
       this.$refs.nav.classList.toggle("is-active");
       this.$refs.navitem.classList.toggle("is-active");
     }

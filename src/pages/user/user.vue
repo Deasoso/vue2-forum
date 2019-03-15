@@ -20,30 +20,35 @@
       </mu-flexbox>
       <mu-list class="topic-list">
         <mu-list-item 
-          title="我收藏的话题" 
+          title="经验" 
+          afterText="1000">
+          <i class="fas fa-comment" slot="left"/>
+          <mu-icon value="navigate_next" color="#D3DCE6" slot="right" />
+        </mu-list-item><!--:afterText="COLLECTS_COUNT.toString()"-->
+        <mu-list-item 
+          title="我创建的工作室" 
           afterTextClass="topic-num" 
-          :afterText="COLLECTS_COUNT.toString()"
-          @click.native="openUserTopic('我收藏的话题', 'collect_topics')"
-        >
+          afterText="1"
+          @click.native="openUserTopic('我收藏的话题', 'collect_topics')">
           <mu-icon value="star" :size="20" style="color: #fcc015" slot="left"/>
+          <mu-icon value="navigate_next" color="#D3DCE6" slot="right" />
+        </mu-list-item><!--:afterText="REPLIES_COUNT.toString()"-->
+        <mu-list-item 
+          title="我加入的工作室" 
+          afterTextClass="topic-num" 
+          afterText="3"
+          @click.native="openUserTopic('我参与的话题', 'recent_replies')"
+        >
+          <mu-icon value="bubble_chart" :size="20" style="color: #00b1fe" slot="left"/>
           <mu-icon value="navigate_next" color="#D3DCE6" slot="right" />
         </mu-list-item>
         <mu-list-item 
           title="我参与的话题" 
           afterTextClass="topic-num" 
-          :afterText="REPLIES_COUNT.toString()"
-          @click.native="openUserTopic('我参与的话题', 'recent_replies')"
-        >
-          <mu-icon value="chat" :size="20" style="color: #00b1fe" slot="left"/>
-          <mu-icon value="navigate_next" color="#D3DCE6" slot="right" />
-        </mu-list-item>
-        <mu-list-item 
-          title="我最近的话题" 
-          afterTextClass="topic-num" 
           :afterText="RECENT_COUNT.toString()"
           @click.native="openUserTopic('我最近的话题', 'recent_topics')"
         >
-          <mu-icon value="bubble_chart" :size="20" style="color: #f86161" slot="left"/>
+          <mu-icon value="chat" :size="20" style="color: #f86161" slot="left"/>
           <mu-icon value="navigate_next" color="#D3DCE6" slot="right" />
         </mu-list-item>
       </mu-list>

@@ -4,8 +4,23 @@
     leave-active-class="animated fadeOut"
     mode="in-out"
   >
-    <div class="login pab wauto2 not">
-      <div class="access-token tc">
+    <div class="login not">
+      <div class="enter-user tc">
+        <!-- <mu-icon 
+          class="lock-icon pre" 
+          :class="{ac:active}" 
+          value="lock_outline"
+        /> -->
+        <i class="far fa-address-book usericon" width="24px"></i>
+        <mu-text-field 
+          hintText="accessToken" 
+          v-model="accessToken"
+          @focus="handlefocus"
+          @blur="handleblur"
+          class="tl"
+        />
+      </div>
+      <div class="enter-password tc">
         <mu-icon 
           class="lock-icon pre" 
           :class="{ac:active}" 
@@ -20,8 +35,8 @@
         />
       </div>
       <div class="pre">
-        <mu-raised-button label="注册" class="tc wauto" href="https://www.vue-js.com/" />
         <mu-raised-button label="登录" class="tc wauto" @click="handleLogin" />
+        <mu-raised-button label="注册" class="tc wauto" href="https://www.vue-js.com/" />
         <mu-circular-progress class="pfi centre1" v-if="login.isfetching" color="#41b883" :size="40"/>
       </div>
       <p class="how-get" @click="handleHowGet">
@@ -84,10 +99,30 @@ export default {
 </script>
 
 <style lang="less">
+  .usericon{
+    margin-left: 10px;
+    margin-right: 10px;
+  }
   .login{
-    max-width: 352px;
-    .access-token{
+    // max-width: 352px;
+    .enter-user{
       margin-top: 30px;
+      .lock-icon{
+        bottom: -8px;
+        padding: 0 10px;
+        color: #7a7777;
+        &.ac{
+          color: #41b883;
+        }
+      }
+      .mu-text-field{
+        width: 200px;
+        .mu-text-field-focus-line{
+          background-color: #41b883;
+        }
+      }
+    }
+    .enter-password{
       .lock-icon{
         bottom: -8px;
         padding: 0 10px;
@@ -107,7 +142,7 @@ export default {
       display: block;
       width: 70%;
       margin-top: 12px;
-      &:nth-child(2){
+      &:nth-child(1){
         color: #fff;
         background-color: #41b883;
       }
