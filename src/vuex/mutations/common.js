@@ -1,6 +1,11 @@
 import * as types from '../constants/types'
 
 const commonMutations = {
+  // appbar
+  [types.CHANGE_TITLE_TEXT](state, action){
+    state.maintitle.text = action.text;
+  },
+
   // infopopup
   [types.SHOW_INFOPOPUP](state){
     state.infopopup.isopen = true;

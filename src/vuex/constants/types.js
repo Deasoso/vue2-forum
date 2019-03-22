@@ -48,6 +48,9 @@ export const FETCH_MARK_ALL_ERR = 'FETCH_MARK_ALL_ERR'
 export const CLEAR_MESSAGE = 'CLEAR_MESSAGE'
 
 /************************common*****************************/
+// appbar
+export const CHANGE_TITLE_TEXT = 'CHANGE_TITLE_TEXT'
+
 //infopopup
 export const SHOW_INFOPOPUP = "SHOW_INFOPOPUP"
 export const HIDE_INFOPOPUP = "HIDE_INFOPOPUP"
@@ -73,10 +76,14 @@ export const SWITCH_ROUTE_PAGE = "SWITCH_ROUTE_PAGE"
 
 
 /************************getter*****************************/
+//appbar
+export const TITLE_TEXT = "TITLE_TEXT"
+
 //login
 export const COLLECTS_COUNT = 'COLLECTS_COUNT'
 export const REPLIES_COUNT = 'REPLIES_COUNT'
 export const RECENT_COUNT = 'RECENT_COUNT'
+
 // message
 export const HAS_NOT_READ_MESSAGES_COUNT = 'HAS_NOT_READ_MESSAGES_COUNT'
 export const HAS_READ_MESSAGES_COUNT = 'HAS_READ_MESSAGES_COUNT'

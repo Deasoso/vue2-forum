@@ -31,6 +31,12 @@ const commomActions = {
       commit(types.HIDE_INFOPOPUP);
       clearTimeout(t)
     },2000)
+  },
+
+  setTitle({commit, state}, params){
+    commit(types.CHANGE_TITLE_TEXT, { 
+      text: params.text
+    });
   }
 }
 

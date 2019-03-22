@@ -1,9 +1,13 @@
 import commonActions from '../actions/common'
 import commonMutations from '../mutations/common'
+import commonGetters from '../getters/common'
 
 
 const common = {
   state: {
+    maintitle: {
+      text: null
+    },
     infopopup: {
       isopen: false,
       infostate: true,   //suc用true,err用false
@@ -26,7 +30,8 @@ const common = {
     }
   },
   mutations: commonMutations,
-  actions: commonActions
+  actions: commonActions,
+  getters: commonGetters
 }
 
 export default common;

@@ -35,8 +35,8 @@
         />
       </div>
       <div class="pre">
-        <mu-raised-button label="登录" class="tc wauto" @click="handleLogin" />
-        <mu-raised-button label="注册" class="tc wauto" href="https://www.vue-js.com/" />
+        <mu-raised-button label="注册" class="tc wauto" @click="handleLogin" />
+        <mu-raised-button label="登录" class="tc wauto" href="https://www.vue-js.com/" />
         <mu-circular-progress class="pfi centre1" v-if="login.isfetching" color="#41b883" :size="40"/>
       </div>
       <p class="how-get" @click="handleHowGet">
@@ -68,7 +68,7 @@ export default {
   computed: {
     ...mapState([
       'login',
-      'common',
+      'common'
     ])
   },
   methods: {
@@ -94,9 +94,6 @@ export default {
         });
       }
     }
-  },
-  created(){
-    this.$store.dispatch('setTitle', {text: '登录'})
   }
 }
 </script>

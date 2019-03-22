@@ -7,7 +7,7 @@
     <nav class="navbar" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
         <a class="navbar-item square" href="/">
-          广场
+          {{title}}
         </a>
         <a class="navbar-item" style="margin-left:auto;margin-right:0px">
           <span class="icon">
@@ -57,19 +57,22 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
-
+import { mapState, mapGetters } from 'vuex'
 
 export default {
   data() {
     return {
-      selected: ""
+      selected: "",
+      title: "",
     }
   },
   computed: {
     ...mapState([
       'login'
     ]),
+    ...mapGetters([
+      'TITLE_TEXT'
+    ])
   },
   methods: {
     releaseTopic(){
@@ -90,8 +93,12 @@ export default {
       this.$refs.nav.classList.toggle("is-active");
       this.$refs.navitem.classList.toggle("is-active");
     }
+  },
+  watch: {
+    TITLE_TEXT: function(li) {
+      this.title = li;
+    }
   }
-
 }
 </script>
 
