@@ -2,36 +2,36 @@
     {
         "url":"http://www.deaso40.com/emag/oldimg/RMXP.jpg",
         "name":"RMXP",
-        "to":"/m/"
+        "to":"/plates/RMXP"
     }
     ,
     {
         "url":"http://www.deaso40.com/emag/oldimg/RMVX.jpg",
         "name":"RMVX",
-        "to":"/m/"
+        "to":"/plates/RMVX"
     }
     ,
     {
         "url":"http://www.deaso40.com/emag/oldimg/RMMV.jpg",
         "name":"RMMV",
-        "to":"/m/"
+        "to":"/plates/RMMV"
     }
     ,
     {
         "url":"http://www.deaso40.com/emag/oldimg/3dx max.jpg",
         "name":"3ds",
-        "to":"/m/"
+        "to":"/plates/3ds"
     }
     ,
     {
         "url":"http://www.deaso40.com/emag/oldimg/AGM.jpg",
         "name":"AGM",
-        "to":"/m/"
+        "to":"/plates/AGM"
     }
     ,
     {
         "url":"http://www.deaso40.com/emag/oldimg/橙光.jpg",
         "name":"橙光",
-        "to":"/m/"
+        "to":"/plates/chengguang"
     }
 ]

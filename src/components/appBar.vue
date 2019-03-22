@@ -6,9 +6,9 @@
   <div>
     <nav class="navbar" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
-        <a class="navbar-item square" href="/">
+        <div class="navbar-item square">
           {{title}}
-        </a>
+        </div>
         <a class="navbar-item" style="margin-left:auto;margin-right:0px">
           <span class="icon">
             <i class="fas fa-user"></i>
@@ -98,6 +98,9 @@ export default {
     TITLE_TEXT: function(li) {
       this.title = li;
     }
+  },
+  created(){
+    this.title = this.TITLE_TEXT;
   }
 }
 </script>

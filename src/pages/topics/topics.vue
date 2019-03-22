@@ -94,8 +94,8 @@ export default {
     ])
   },
   mounted(){
+    this.$store.dispatch('setTitle', {text: '首页'})
     this.$nextTick(function () {
-      console.log(this.topic);
       this.listRefObj.all = this.$refs.all[0];
       this.listRefObj.good = this.$refs.good[0];
       this.listRefObj.weex = this.$refs.weex[0];
